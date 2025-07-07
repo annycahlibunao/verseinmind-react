@@ -23,6 +23,19 @@ function createUser(request, response) {
 }
 
 
+function getAllUsers(request, response) {
+    db.query('SELECT * FROM users', (error, results) => {
+        if(error) {
+            response.status(404).send({
+                message: error.message || 'An error occurred'
+            });        
+        } else {
+            response.send(results);
+        }
+    });
+}
+
+
 function getUserByLogin(request, response) {
     db.query('SELECT * FROM users WHERE email = ? AND password = ?', request.params.email, request.params.password, (error, results) => {
         if(error) {
@@ -37,5 +50,6 @@ function getUserByLogin(request, response) {
 
 module.exports = {
     createUser,
+    getAllUsers,
     getUserByLogin
 }

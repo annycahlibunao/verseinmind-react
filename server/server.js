@@ -7,12 +7,13 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     console.log('App is listening');
 })
 
 const route = require('./resources/users.js');
 
-app.get('/users', route.createUser);
+app.get('/users', route.getAllUsers);
+app.post('/users', route.createUser);
 //app.get('/users', route.getUserByLogin);
 
