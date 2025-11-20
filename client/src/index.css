@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-theme-orange: #FFA25C;
+  --color-theme-orange: #FFA25C; 
   --color-theme-grey: #A2A19F;
   --color-border: #E4E1DC;
 }

@@ -20,7 +20,7 @@ function TextBox({
             type={type}
             value={value}
             placeholder={placeholder}
-            className={`p-3 rounded-2xl border-2 border-[var(--color-border)] text-md ${customClassName}`}
+            className={`p-3 rounded-2xl border-2 border-(--color-border) text-md ${customClassName}`}
             onChange={(e) => onChange(e.target.value)}
         />
     </>
