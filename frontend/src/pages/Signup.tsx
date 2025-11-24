@@ -8,9 +8,28 @@ function SignupForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function onClickSignup() {
-    
+  async function onClickSignup() {
+    const data = JSON.stringify({
+        "firstname": fname,
+        "lastname": lname,
+        "email": email,
+        "password": password
+    })
+
+    try {
+        const response = await fetch("http://localhost:3000/signup", {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: data
+        })
+
+        const result = await response.json();
+        console.log("Success: ", result);
+    } catch (err) {
+        console.error("Error: ", err)
+    }
   }
+
   return (
     <>
         <div className="m-[6vw] w-[40%]">
