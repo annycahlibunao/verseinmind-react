@@ -73,6 +73,7 @@ function SignupForm() {
             </div>
             <Button 
                 value="Create account"
+                path="/dashboard"
                 onClick={onClickSignup}
                 customClassName="float-right"
             />
