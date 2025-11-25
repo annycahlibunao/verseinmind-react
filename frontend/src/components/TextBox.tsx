@@ -1,17 +1,19 @@
 interface TextBoxProps {
     type: string;
     value: string;
-    onChange: (value: string) => void;
     placeholder?: string;
     customClassName: string;
+    onError: string;
+    onChange: (value: string) => void;
 }
 
 function TextBox({
     type,
     value, 
-    onChange,
     placeholder, 
     customClassName,
+    onError,
+    onChange,
 }: TextBoxProps) {
 
   return (
@@ -20,7 +22,8 @@ function TextBox({
             type={type}
             value={value}
             placeholder={placeholder}
-            className={`p-3 rounded-2xl border-2 border-(--color-border) text-md ${customClassName}`}
+            className={`p-3 rounded-2xl border-2 text-md ${customClassName} 
+            ${onError ? `border-red-600` : `border-(--color-border)`}`}
             onChange={(e) => onChange(e.target.value)}
         />
     </>
