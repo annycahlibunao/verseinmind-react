@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import TextBox from "../components/TextBox";
 import Button from "../components/Button";
 
@@ -34,7 +35,7 @@ function SignupForm() {
     <>
         <div className="m-[6vw] w-[40%]">
             <h1>Welcome to VerseInMind<span className="text-(--color-theme-orange)">.</span></h1>
-            <h2 className="text-(--color-theme-grey) mb-[2vw]">Already have an account? <span className="text-(--color-theme-orange)">Login</span></h2>
+            <h2 className="text-(--color-theme-grey) mb-[2vw]">Already have an account? <span className="text-(--color-theme-orange)"><Link to="/login">Login</Link></span></h2>
             <div className="w-full mt-[3vw]">
                 <div className="grid grid-cols-2 gap-[1vw]">
                     <TextBox 
